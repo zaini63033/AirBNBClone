@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["lh3.googleusercontent.com", "res.cloudinary.com"],
+    domains: ['pix1.agoda.net', 'pix2.agoda.net', 'pix4.agoda.net'], // Include all required domains
   },
 };
 
