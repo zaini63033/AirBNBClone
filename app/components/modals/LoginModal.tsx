@@ -1,8 +1,6 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import { AiFillGithub } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
@@ -12,7 +10,6 @@ import Modal from ".";
 import Heading from "../heading";
 import Input from "../input";
 import { toast } from "react-hot-toast";
-import Button from "../button";
 import { useRouter } from "next/navigation";
 
 const LoginModal = () => {
@@ -83,18 +80,6 @@ const LoginModal = () => {
   const footerContent = (
     <div className="mt-3 flex flex-col gap-4">
       <hr />
-      <Button
-        outline
-        label="Continue with Google"
-        icon={FcGoogle}
-        onClick={() => signIn("google")}
-      />
-      {/* <Button
-        outline
-        label="Continue with Github"
-        icon={AiFillGithub}
-        onClick={() => {}}
-      /> */}
       <div
         className="
           mt-4
@@ -110,7 +95,7 @@ const LoginModal = () => {
             justify-center 
             gap-2"
         >
-          <div>First time using Airbnb ?</div>
+          <div>First time using Airbnb?</div>
           <div
             onClick={toggle}
             className="
@@ -124,6 +109,7 @@ const LoginModal = () => {
       </div>
     </div>
   );
+
   return (
     <div>
       <Modal

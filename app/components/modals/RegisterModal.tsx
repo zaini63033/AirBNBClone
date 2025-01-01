@@ -1,8 +1,6 @@
 "use client";
 
 import axios from "axios";
-import { AiFillGithub } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
@@ -13,7 +11,6 @@ import Heading from "../heading";
 import Input from "../input";
 import { toast } from "react-hot-toast";
 import Button from "../button";
-import { signIn } from "next-auth/react";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -42,8 +39,8 @@ const RegisterModal = () => {
         registerModal.onClose();
         loginModal.onOpen();
       })
-      .catch((error) => {
-        toast.error("Something went wrong !");
+      .catch(() => {
+        toast.error("Something went wrong!");
       })
       .finally(() => {
         setIsLoading(false);
@@ -89,18 +86,6 @@ const RegisterModal = () => {
   const footerContent = (
     <div className="mt-3 flex flex-col gap-4">
       <hr />
-      <Button
-        outline
-        label="Continue with Google"
-        icon={FcGoogle}
-        onClick={() => signIn("google")}
-      />
-      {/* <Button
-        outline
-        label="Continue with Github"
-        icon={AiFillGithub}
-        onClick={() => {}}
-      /> */}
       <div
         className="
           mt-4
@@ -130,6 +115,7 @@ const RegisterModal = () => {
       </div>
     </div>
   );
+
   return (
     <div>
       <Modal
